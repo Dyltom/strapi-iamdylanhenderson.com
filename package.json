@@ -10,11 +10,12 @@
   "scripts": {
     "build": "strapi build  && npm run generate:types",
     "develop": "strapi develop",
-    "format:check": "prettier --check .",
-    "format:write": "prettier --write .",
     "generate:types": "strapi ts:generate-types",
     "start": "strapi start",
+    "start:stack": "docker-compose up",
     "strapi": "strapi",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
     "types:check": "tsc --noEmit"
   },
   "dependencies": {

@@ -23,12 +23,29 @@ This is the Strapi backend powering the dynamic content for iamdylanhenderson.co
   npm run start
   ```
 
+## Development Scripts
+
+In the project directory, you can run:
+
+- `npm run build`: Builds the admin panel.
+- `npm run develop` or equivalent: Starts the development server.
+- `generate:types`: Generates types from content-types built in strapi (this is also run in build).
+- `npm start`: Runs the built app in production mode.
+- `npm start:stack`: Runs the built app in production mode with Docker (MariaDB) included.
+- `npm run format:check`: Checks the format of files.
+- `npm run format:write`: Formats files.
+- `npm run types:check`: Checks TypeScript types.
+
 ## Deployment
 
-The backend is currently hosted on a VPS using the strapi guide https://strapi.io/blog/deploying-strapi-to-your-own-vps
+Backend is currently hosted on a VPS. The server is running on Ubuntu 20.04. Dockerization was setup in this repo with help from @strapi-community/dockerize.
 
 ## Contribution
 
 Contributions, suggestions, and feedback are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+Enjoy building and managing your content with this version of Strapi! 🚀
 
 ---
