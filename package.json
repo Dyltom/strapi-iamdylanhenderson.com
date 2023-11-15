@@ -1,0 +1,40 @@
+{
+  "name": "strapi-iamdylanhenderson-com",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "license": "MIT",
+  "author": {
+    "name": "Dylan Henderson <dylanthenderson@yahoo.com.au>"
+  },
+  "scripts": {
+    "build": "strapi build  && npm run generate:types",
+    "develop": "strapi develop",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "generate:types": "strapi ts:generate-types",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "types:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "4.15.4",
+    "@strapi/plugin-i18n": "4.15.4",
+    "@strapi/plugin-users-permissions": "4.15.4",
+    "@strapi/strapi": "4.15.4",
+    "better-sqlite3": "8.6.0",
+    "prettier": "^3.1.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "reading-time": "^1.5.0",
+    "styled-components": "5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "9a1147ee-372a-401b-9687-e2d4afc92f0d"
+  }
+}
