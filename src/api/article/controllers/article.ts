@@ -1,37 +1,46 @@
 import { factories } from "@strapi/strapi";
-import { extractText } from "../../../utils/strings";
-
-import readingTime from "reading-time";
+import { calculateAndUpdateReadTime } from "../../../utils/strings";
 
 export default factories.createCoreController(
   "api::article.article",
   ({ strapi }) => ({
     async findOne(ctx) {
       const { id } = ctx.params;
-      const article = await strapi.entityService.findOne(
-        "api::article.article",
-        id,
-      );
+
+      const isId = Number.isInteger(parseInt(id));
+      const entityQuery = isId
+        ? { where: { $or: [{ slug: id }, { id: id }] } }
+        : { where: { slug: id } };
+      const article = await strapi.db
+        .query("api::article.article")
+        .findOne(entityQuery);
+
+      if (!article) {
+        return ctx.notFound("Article not found.");
+      }
 
       if (article.Content) {
-        const text = extractText(article.Content as ParagraphNode[]);
-        const readTimeResult = readingTime(text).time;
-
-        const updatedArticle = await strapi.entityService.update(
-          "api::article.article",
-          id,
-          {
-            data: {
-              views: (article.views || 0) + 1,
-              readTime: readTimeResult,
-            },
-          },
-        );
-
-        return updatedArticle;
+        return this.calculateAndUpdateReadTime(article, true);
       }
 
       return article;
+    },
+
+    async find() {
+      const articles = await strapi.entityService.findMany(
+        "api::article.article",
+      );
+
+      const updatedArticles = await Promise.all(
+        articles.map((article) => {
+          if (article.Content) {
+            return calculateAndUpdateReadTime(article);
+          }
+          return article;
+        }),
+      );
+
+      return updatedArticles;
     },
   }),
 );
