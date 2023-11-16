@@ -1,3 +1,6 @@
+import { Attribute } from "@strapi/strapi";
+import readingTime from "reading-time";
+
 export function extractText(content: ParagraphNode[]): string {
   let allText = "";
   content.forEach((paragraph) => {
@@ -9,3 +12,27 @@ export function extractText(content: ParagraphNode[]): string {
   });
   return allText;
 }
+
+export const calculateAndUpdateReadTime = (
+  article: Attribute.GetValues<
+    "api::article.article",
+    Attribute.GetNonPopulatableKeys<"api::article.article">
+  >,
+  updateViews: boolean = false,
+) => {
+  const text = extractText(article.Content as ParagraphNode[]);
+  const readTimeResult = readingTime(text).time;
+  const updateData: { data: { views?: number; readTime: number } } = {
+    data: { readTime: readTimeResult },
+  };
+
+  if (updateViews) {
+    updateData.data.views = (article.views || 0) + 1;
+  }
+
+  return strapi.entityService.update(
+    "api::article.article",
+    article.id,
+    updateData,
+  );
+};
