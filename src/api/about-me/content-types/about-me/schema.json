@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_mes",
+  "info": {
+    "singularName": "about-me",
+    "pluralName": "about-mes",
+    "displayName": "About",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "aboutContent": {
+      "type": "text"
+    },
+    "aboutTitle": {
+      "type": "string"
+    },
+    "workExperienceTitle": {
+      "type": "string"
+    },
+    "skillsTitle": {
+      "type": "string"
+    },
+    "skillsChartText": {
+      "type": "string"
+    },
+    "testimonialsTitle": {
+      "type": "string"
+    },
+    "interestingFactsTitle": {
+      "type": "string"
+    }
+  }
+}

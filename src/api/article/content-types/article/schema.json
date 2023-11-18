@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Content": {
+    "content": {
       "type": "blocks"
     },
     "shortDescription": {
@@ -28,8 +28,10 @@
       "type": "integer"
     },
     "slug": {
-      "type": "uid",
-      "targetField": "Title"
+      "type": "uid"
+    },
+    "categories": {
+      "type": "json"
     }
   }
 }

@@ -362,42 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiArticleArticle extends Schema.CollectionType {
-  collectionName: "articles";
-  info: {
-    singularName: "article";
-    pluralName: "articles";
-    displayName: "article";
-    description: "";
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Content: Attribute.Blocks;
-    shortDescription: Attribute.String;
-    readTime: Attribute.Integer;
-    views: Attribute.Integer;
-    slug: Attribute.UID<"api::article.article", "Title">;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      "api::article.article",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      "api::article.article",
-      "oneToOne",
-      "admin::user"
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: "files";
   info: {
@@ -713,6 +677,298 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutMeAboutMe extends Schema.SingleType {
+  collectionName: "about_mes";
+  info: {
+    singularName: "about-me";
+    pluralName: "about-mes";
+    displayName: "About";
+    description: "";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutContent: Attribute.Text;
+    aboutTitle: Attribute.String;
+    workExperienceTitle: Attribute.String;
+    skillsTitle: Attribute.String;
+    skillsChartText: Attribute.String;
+    testimonialsTitle: Attribute.String;
+    interestingFactsTitle: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::about-me.about-me",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::about-me.about-me",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiArticleArticle extends Schema.CollectionType {
+  collectionName: "articles";
+  info: {
+    singularName: "article";
+    pluralName: "articles";
+    displayName: "article";
+    description: "";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.Blocks;
+    shortDescription: Attribute.String;
+    readTime: Attribute.Integer;
+    views: Attribute.Integer;
+    slug: Attribute.UID;
+    categories: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::article.article",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::article.article",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCallToActionCallToAction extends Schema.SingleType {
+  collectionName: "call_to_actions";
+  info: {
+    singularName: "call-to-action";
+    pluralName: "call-to-actions";
+    displayName: "Call to Action";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Attribute.String;
+    buttonText: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::call-to-action.call-to-action",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::call-to-action.call-to-action",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactUsContactUs extends Schema.SingleType {
+  collectionName: "contact_uses";
+  info: {
+    singularName: "contact-us";
+    pluralName: "contact-uses";
+    displayName: "Contact Us";
+    description: "";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    resume: Attribute.Media;
+    title: Attribute.String;
+    resumeCta: Attribute.String;
+    resumeCtaButtonText: Attribute.String;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::contact-us.contact-us",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::contact-us.contact-us",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFactFact extends Schema.CollectionType {
+  collectionName: "facts";
+  info: {
+    singularName: "fact";
+    pluralName: "facts";
+    displayName: "Fact";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<"api::fact.fact", "oneToOne", "admin::user"> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<"api::fact.fact", "oneToOne", "admin::user"> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHeroContentSection1HeroContentSection1
+  extends Schema.SingleType {
+  collectionName: "hero_content_section1s";
+  info: {
+    singularName: "hero-content-section1";
+    pluralName: "hero-content-section1s";
+    displayName: "Hero Content";
+    description: "";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::hero-content-section1.hero-content-section1",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::hero-content-section1.hero-content-section1",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSkillSkill extends Schema.CollectionType {
+  collectionName: "skills";
+  info: {
+    singularName: "skill";
+    pluralName: "skills";
+    displayName: "Skill";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    experience: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::skill.skill",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::skill.skill",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTestimonialTestimonial extends Schema.CollectionType {
+  collectionName: "testimonials";
+  info: {
+    singularName: "testimonial";
+    pluralName: "testimonials";
+    displayName: "Testimonial";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    quote: Attribute.Text;
+    author: Attribute.String;
+    role: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::testimonial.testimonial",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::testimonial.testimonial",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWorkExperienceWorkExperience extends Schema.CollectionType {
+  collectionName: "work_experiences";
+  info: {
+    singularName: "work-experience";
+    pluralName: "work-experiences";
+    displayName: "Work Experience";
+    description: "";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company: Attribute.String;
+    points: Attribute.JSON;
+    title: Attribute.String;
+    startDate: Attribute.Date;
+    endDate: Attribute.Date;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      "api::work-experience.work-experience",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      "api::work-experience.work-experience",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module "@strapi/types" {
   export module Shared {
     export interface ContentTypes {
@@ -723,13 +979,21 @@ declare module "@strapi/types" {
       "admin::api-token-permission": AdminApiTokenPermission;
       "admin::transfer-token": AdminTransferToken;
       "admin::transfer-token-permission": AdminTransferTokenPermission;
-      "api::article.article": ApiArticleArticle;
       "plugin::upload.file": PluginUploadFile;
       "plugin::upload.folder": PluginUploadFolder;
       "plugin::i18n.locale": PluginI18NLocale;
       "plugin::users-permissions.permission": PluginUsersPermissionsPermission;
       "plugin::users-permissions.role": PluginUsersPermissionsRole;
       "plugin::users-permissions.user": PluginUsersPermissionsUser;
+      "api::about-me.about-me": ApiAboutMeAboutMe;
+      "api::article.article": ApiArticleArticle;
+      "api::call-to-action.call-to-action": ApiCallToActionCallToAction;
+      "api::contact-us.contact-us": ApiContactUsContactUs;
+      "api::fact.fact": ApiFactFact;
+      "api::hero-content-section1.hero-content-section1": ApiHeroContentSection1HeroContentSection1;
+      "api::skill.skill": ApiSkillSkill;
+      "api::testimonial.testimonial": ApiTestimonialTestimonial;
+      "api::work-experience.work-experience": ApiWorkExperienceWorkExperience;
     }
   }
 }

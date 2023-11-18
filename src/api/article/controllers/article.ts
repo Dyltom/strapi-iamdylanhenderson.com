@@ -27,7 +27,7 @@ export default factories.createCoreController(
         return ctx.notFound("Article not found.");
       }
 
-      if (article.Content) {
+      if (article.content) {
         const text = extractText(article.Content as ParagraphNode[]);
         const readTimeResult = readingTime(text).time;
 
@@ -55,7 +55,7 @@ export default factories.createCoreController(
 
       const updatedArticles = await Promise.all(
         articles.map((article) => {
-          if (article.Content) {
+          if (article.content) {
             return calculateAndUpdateReadTime(article);
           }
           return article;
