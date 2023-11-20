@@ -28,7 +28,7 @@
       "type": "string"
     },
     "content": {
-      "type": "richtext"
+      "type": "blocks"
     }
   }
 }
