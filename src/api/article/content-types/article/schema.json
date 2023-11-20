@@ -13,25 +13,34 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "content": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": true
     },
     "shortDescription": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "readTime": {
-      "type": "integer"
+      "type": "integer",
+      "default": 1,
+      "required": false
     },
     "views": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0,
+      "required": false
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "required": true
     },
     "categories": {
-      "type": "json"
+      "type": "json",
+      "required": false
     }
   }
 }

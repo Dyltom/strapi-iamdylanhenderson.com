@@ -4,7 +4,8 @@
   "info": {
     "singularName": "testimonial",
     "pluralName": "testimonials",
-    "displayName": "Testimonial"
+    "displayName": "Testimonial",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,13 +13,16 @@
   "pluginOptions": {},
   "attributes": {
     "quote": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "author": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "role": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

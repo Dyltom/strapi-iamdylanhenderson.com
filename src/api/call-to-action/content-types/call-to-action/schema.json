@@ -4,7 +4,8 @@
   "info": {
     "singularName": "call-to-action",
     "pluralName": "call-to-actions",
-    "displayName": "Call to Action"
+    "displayName": "Call to Action",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,10 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "text": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "buttonText": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

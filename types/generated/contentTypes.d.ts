@@ -689,13 +689,13 @@ export interface ApiAboutMeAboutMe extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    aboutContent: Attribute.Text;
-    aboutTitle: Attribute.String;
-    workExperienceTitle: Attribute.String;
-    skillsTitle: Attribute.String;
-    skillsChartText: Attribute.String;
-    testimonialsTitle: Attribute.String;
-    interestingFactsTitle: Attribute.String;
+    aboutContent: Attribute.Text & Attribute.Required;
+    aboutTitle: Attribute.String & Attribute.Required;
+    workExperienceTitle: Attribute.String & Attribute.Required;
+    skillsTitle: Attribute.String & Attribute.Required;
+    skillsChartText: Attribute.String & Attribute.Required;
+    testimonialsTitle: Attribute.String & Attribute.Required;
+    interestingFactsTitle: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -726,12 +726,12 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    content: Attribute.Blocks;
-    shortDescription: Attribute.String;
-    readTime: Attribute.Integer;
-    views: Attribute.Integer;
-    slug: Attribute.UID;
+    title: Attribute.String & Attribute.Required;
+    content: Attribute.Blocks & Attribute.Required;
+    shortDescription: Attribute.String & Attribute.Required;
+    readTime: Attribute.Integer & Attribute.DefaultTo<1>;
+    views: Attribute.Integer & Attribute.DefaultTo<0>;
+    slug: Attribute.UID & Attribute.Required;
     categories: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -757,13 +757,14 @@ export interface ApiCallToActionCallToAction extends Schema.SingleType {
     singularName: 'call-to-action';
     pluralName: 'call-to-actions';
     displayName: 'Call to Action';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    text: Attribute.String;
-    buttonText: Attribute.String;
+    text: Attribute.String & Attribute.Required;
+    buttonText: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -794,11 +795,11 @@ export interface ApiContactUsContactUs extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    resume: Attribute.Media;
+    resume: Attribute.Media & Attribute.Required;
     title: Attribute.String;
-    resumeCta: Attribute.String;
-    resumeCtaButtonText: Attribute.String;
-    content: Attribute.Blocks;
+    resumeCta: Attribute.String & Attribute.Required;
+    resumeCtaButtonText: Attribute.String & Attribute.Required;
+    content: Attribute.Blocks & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -823,12 +824,13 @@ export interface ApiFactFact extends Schema.CollectionType {
     singularName: 'fact';
     pluralName: 'facts';
     displayName: 'Fact';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    content: Attribute.String;
+    content: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -877,13 +879,14 @@ export interface ApiSkillSkill extends Schema.CollectionType {
     singularName: 'skill';
     pluralName: 'skills';
     displayName: 'Skill';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    experience: Attribute.Decimal;
+    name: Attribute.String & Attribute.Required;
+    experience: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -908,14 +911,15 @@ export interface ApiTestimonialTestimonial extends Schema.CollectionType {
     singularName: 'testimonial';
     pluralName: 'testimonials';
     displayName: 'Testimonial';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    quote: Attribute.Text;
-    author: Attribute.String;
-    role: Attribute.String;
+    quote: Attribute.Text & Attribute.Required;
+    author: Attribute.String & Attribute.Required;
+    role: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -946,11 +950,11 @@ export interface ApiWorkExperienceWorkExperience extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    company: Attribute.String;
-    points: Attribute.JSON;
-    title: Attribute.String;
-    startDate: Attribute.Date;
-    endDate: Attribute.Date;
+    company: Attribute.String & Attribute.Required;
+    points: Attribute.JSON & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    startDate: Attribute.Date & Attribute.Required;
+    endDate: Attribute.Date & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

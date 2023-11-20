@@ -4,7 +4,8 @@
   "info": {
     "singularName": "fact",
     "pluralName": "facts",
-    "displayName": "Fact"
+    "displayName": "Fact",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "content": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

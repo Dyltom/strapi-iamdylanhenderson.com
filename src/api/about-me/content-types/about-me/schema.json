@@ -13,25 +13,32 @@
   "pluginOptions": {},
   "attributes": {
     "aboutContent": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "aboutTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "workExperienceTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "skillsTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "skillsChartText": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "testimonialsTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "interestingFactsTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

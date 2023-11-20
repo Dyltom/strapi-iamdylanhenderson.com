@@ -15,20 +15,25 @@
     "resume": {
       "type": "media",
       "multiple": false,
-      "required": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     },
     "title": {
       "type": "string"
     },
     "resumeCta": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "resumeCtaButtonText": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "content": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": true
     }
   }
 }

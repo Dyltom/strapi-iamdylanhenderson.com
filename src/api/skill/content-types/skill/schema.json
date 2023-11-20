@@ -4,7 +4,8 @@
   "info": {
     "singularName": "skill",
     "pluralName": "skills",
-    "displayName": "Skill"
+    "displayName": "Skill",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,10 +13,13 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "experience": {
-      "type": "decimal"
+      "type": "decimal",
+      "default": 1,
+      "required": true
     }
   }
 }
