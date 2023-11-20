@@ -28,7 +28,7 @@ export default factories.createCoreController(
       }
 
       if (article.content) {
-        const text = extractText(article.Content as ParagraphNode[]);
+        const text = extractText(article.content as ParagraphNode[]);
         const readTimeResult = readingTime(text).time;
 
         const updatedArticle = await strapi.entityService.update(
