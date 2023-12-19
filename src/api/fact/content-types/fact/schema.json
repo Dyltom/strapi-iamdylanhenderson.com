@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "facts",
+  "info": {
+    "singularName": "fact",
+    "pluralName": "facts",
+    "displayName": "Fact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

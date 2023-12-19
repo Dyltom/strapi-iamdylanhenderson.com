@@ -12,24 +12,35 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "required": true
     },
-    "Content": {
-      "type": "blocks"
+    "content": {
+      "type": "blocks",
+      "required": true
     },
     "shortDescription": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "readTime": {
-      "type": "integer"
+      "type": "integer",
+      "default": 1,
+      "required": false
     },
     "views": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0,
+      "required": false
     },
     "slug": {
       "type": "uid",
-      "targetField": "Title"
+      "required": true
+    },
+    "categories": {
+      "type": "json",
+      "required": false
     }
   }
 }

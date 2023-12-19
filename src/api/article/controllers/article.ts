@@ -27,8 +27,8 @@ export default factories.createCoreController(
         return ctx.notFound("Article not found.");
       }
 
-      if (article.Content) {
-        const text = extractText(article.Content as ParagraphNode[]);
+      if (article.content) {
+        const text = extractText(article.content as ParagraphNode[]);
         const readTimeResult = readingTime(text).time;
 
         const updatedArticle = await strapi.entityService.update(
@@ -55,7 +55,7 @@ export default factories.createCoreController(
 
       const updatedArticles = await Promise.all(
         articles.map((article) => {
-          if (article.Content) {
+          if (article.content) {
             return calculateAndUpdateReadTime(article);
           }
           return article;

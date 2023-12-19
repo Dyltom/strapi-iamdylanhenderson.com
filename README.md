@@ -29,7 +29,7 @@ In the project directory, you can run:
 
 - `npm run build`: Builds the admin panel.
 - `npm run develop` or equivalent: Starts the development server.
-- `generate:types`: Generates types from content-types built in strapi (this is also run in build).
+- `npm run generate:types`: Generates types from content-types built in strapi (this is also run in build).
 - `npm start`: Runs the built app in production mode.
 - `npm start:stack`: Runs the built app in production mode with Docker (MariaDB) included.
 - `npm run format:check`: Checks the format of files.
@@ -43,6 +43,11 @@ Backend is currently hosted on a VPS. The server is running on Ubuntu 20.04. Doc
 ## Contribution
 
 Contributions, suggestions, and feedback are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Common issues
+
+Problem: Adding new content type breaks strapi
+Fix: Enter this command npx run start:stack and your problems will be solved!
 
 ---
 

@@ -20,7 +20,7 @@ export const calculateAndUpdateReadTime = (
   >,
   updateViews: boolean = false,
 ) => {
-  const text = extractText(article.Content as ParagraphNode[]);
+  const text = extractText(article.content as ParagraphNode[]);
   const readTimeResult = readingTime(text).time;
   const updateData: { data: { views?: number; readTime: number } } = {
     data: { readTime: readTimeResult },
